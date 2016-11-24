@@ -1,14 +1,12 @@
-FROM centos:latest
-MAINTAINER Nathon Fowlie <nathon.fowlie@gmail.com>
+FROM nfowlie/centos-jre:1.8.0_60
+MAINTAINER Kevin Savage
 
-WORKDIR /tmp
 
-COPY install.sh install.sh
-COPY directives.adoc directives.adoc
+COPY installImod.sh installImod.sh
 
 USER root
-RUN chmod a+x install.sh && \
-    /bin/bash ./install.sh -v 8u66
+RUN chmod a+x installImod.sh && \
+    /bin/bash ./installImod.sh -v 8u66
 
 ENV IMOD=/tmp/imod/IMOD
 ENV RUNCMD_VERBOSE=1
