@@ -1,4 +1,4 @@
-FROM nfowlie/centos-jre:1.8.0_60
+FROM nathonfowlie/centos-jre
 MAINTAINER Kevin Savage
 
 
@@ -11,7 +11,7 @@ RUN chmod a+x installImod.sh && \
 ENV IMOD=/tmp/imod/IMOD
 ENV RUNCMD_VERBOSE=1
 ENV IMOD_DIR=$IMOD
-ENV PATH=$PATH:$IMOD_DIR$IMOD_DIR/bin
+ENV PATH=$PATH:$IMOD_DIR:$IMOD_DIR/bin
 ENV MANPATH=$IMOD/man
 ENV IMOD_JAVADIR=/usr/java
 ENV IMOD_PLUGIN_DIR=$IMOD/lib/imodplug
